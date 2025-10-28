@@ -1,0 +1,131 @@
+{
+  "family": "Door_Panel",
+  "revitVersion": "2026",
+  "parameters": [
+    {
+      "name": "Height",
+      "storageType": "Double",
+      "unit": "SpecTypeId.Length",
+      "formula": "TopOffset + BottomOffset + 1800",
+      "dependencies": [
+        "TopOffset",
+        "BottomOffset"
+      ],
+      "range": [
+        1800.0,
+        2400.0
+      ]
+    },
+    {
+      "name": "Width",
+      "storageType": "Double",
+      "unit": "SpecTypeId.Length",
+      "range": [
+        600.0,
+        1200.0
+      ]
+    },
+    {
+      "name": "PanelThickness",
+      "storageType": "Double",
+      "unit": "SpecTypeId.Length",
+      "range": [
+        35.0,
+        50.0
+      ]
+    },
+    {
+      "name": "HingeSide",
+      "storageType": "String",
+      "options": [
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "name": "DrillHoles",
+      "storageType": "String",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "TopOffset",
+      "storageType": "Double",
+      "unit": "SpecTypeId.Length",
+      "range": [
+        0.0,
+        100.0
+      ]
+    },
+    {
+      "name": "BottomOffset",
+      "storageType": "Double",
+      "unit": "SpecTypeId.Length",
+      "range": [
+        0.0,
+        100.0
+      ]
+    }
+  ],
+  "geometry": [
+    {
+      "elementId": 12345,
+      "category": "GenericModel",
+      "meshFile": "Door_Panel_12345.json",
+      "influences": [
+        {
+          "parameter": "Height",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "Width",
+          "effect": "scaleX"
+        },
+        {
+          "parameter": "PanelThickness",
+          "effect": "scaleY"
+        },
+        {
+          "parameter": "HingeSide",
+          "effect": "mirrorX"
+        }
+      ]
+    },
+    {
+      "elementId": 12346,
+      "category": "GenericModel",
+      "meshFile": "Door_Panel_12346.json",
+      "influences": [
+        {
+          "parameter": "DrillHoles",
+          "effect": "visibilityToggle"
+        },
+        {
+          "parameter": "Height",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "HingeSide",
+          "effect": "mirrorX"
+        }
+      ]
+    },
+    {
+      "elementId": 12347,
+      "category": "Hardware",
+      "meshFile": "Door_Panel_12347.json",
+      "influences": [
+        {
+          "parameter": "Height",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "HingeSide",
+          "effect": "mirrorX"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RevitVersion>2026</RevitVersion>
+    <RevitAPIPath>C:\Program Files\Autodesk\Revit 2026</RevitAPIPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>$(RevitAPIPath)\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>$(RevitAPIPath)\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <Target Name="AfterClean">
+    <Delete Files="$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)\FlexMapExporter.addin" />
+    <Delete Files="$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)\FlexMapExporter.dll" />
+  </Target>
+
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="$(TargetDir)FlexMapExporter.dll" DestinationFolder="$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)" />
+    <Copy SourceFiles="FlexMapExporter.addin" DestinationFolder="$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)" />
+  </Target>
+
+</Project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Name>Flex-Map Exporter</Name>
+    <Assembly>FlexMapExporter.dll</Assembly>
+    <AddInId>A3C8D5E7-9F2B-4A6C-8E1D-3F7A9B5C2E4D</AddInId>
+    <FullClassName>FlexMapExporter.FlexMapExporterCommand</FullClassName>
+    <Text>Flex-Map Exporter</Text>
+    <Description>Automatically maps family parameters to geometry behavior and exports JSON configurator data</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>FMEX</VendorId>
+    <VendorDescription>FlexMapExporter</VendorDescription>
+  </AddIn>
+</RevitAddIns>
