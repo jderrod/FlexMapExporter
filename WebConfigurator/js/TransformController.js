@@ -1,8 +1,9 @@
 export class TransformController {
-    constructor(meshes, config, parameterManager) {
+    constructor(meshes, config, parameterManager, scene) {
         this.meshes = meshes;
         this.config = config;
         this.parameterManager = parameterManager;
+        this.scene = scene;
         
         // Conversion factor
         this.feetToMeters = 0.3048;
@@ -16,13 +17,37 @@ export class TransformController {
             this.resetMesh(mesh);
         });
         
+        // Apply visibility controls first
+        this.applyVisibilityControls();
+        
         // Apply all parameter influences
+        // Group by parameter to apply cumulative effects properly
         this.meshes.forEach(mesh => {
             const influences = mesh.userData.influences || [];
             
+            // Process each influence
             influences.forEach(influence => {
                 this.applyInfluence(mesh, influence);
             });
+        });
+    }
+    
+    applyVisibilityControls() {
+        // Control routing void visibility based on swing direction
+        const swingOut = this.parameterManager.getValue('door_swing_direction_out');
+        
+        // Element 5987: LEFT side routing (X negative)
+        // Element 6457: RIGHT side routing (X positive)
+        // Only show ONE side at a time based on swing direction
+        
+        this.meshes.forEach(mesh => {
+            if (mesh.userData.elementId === 5987) {
+                // LEFT routing: visible when swing is IN (0)
+                mesh.visible = (swingOut === 0);
+            } else if (mesh.userData.elementId === 6457) {
+                // RIGHT routing: visible when swing is OUT (1)
+                mesh.visible = (swingOut === 1);
+            }
         });
     }
     
@@ -31,11 +56,33 @@ export class TransformController {
         mesh.position.copy(mesh.userData.originalPosition);
         mesh.scale.copy(mesh.userData.originalScale);
         mesh.rotation.copy(mesh.userData.originalRotation);
+        
+        // Reset visibility for non-void elements
+        if (!mesh.userData.isVoid) {
+            mesh.visible = true;
+        }
     }
     
     applyInfluence(mesh, influence) {
         const paramName = influence.parameter;
         const effect = influence.effect;
+        
+        // Filter out false positive detections
+        
+        // Skip scaleZ effects on floor clearance - it should only translate
+        if (paramName === 'door_floor_clearance_desired' && effect === 'scaleZ') {
+            return; 
+        }
+        
+        // Skip movement effects on swing_direction - this controls visibility, not position
+        if (paramName === 'door_swing_direction_out' && (effect === 'translateY' || effect === 'translateX' || effect === 'translateZ')) {
+            return; // This parameter toggles routing visibility, not position
+        }
+        
+        // Skip movement effects on wall_post_hinging - this controls hinge offsets, not major movement
+        if (paramName === 'door_wall_post_hinging' && (effect === 'scaleZ' || effect === 'translateZ')) {
+            return; // This affects small hinge details, not overall position
+        }
         
         const scaleFactor = this.parameterManager.getScaleFactor(paramName);
         const delta = this.parameterManager.getDelta(paramName) * this.feetToMeters;
@@ -46,11 +93,12 @@ export class TransformController {
                 break;
                 
             case 'scaleY':
-                mesh.scale.y *= scaleFactor;
+                // Y in Revit becomes Z in Three.js (depth)
+                mesh.scale.z *= scaleFactor;
                 break;
                 
             case 'scaleZ':
-                // Z in Revit becomes Y in Three.js
+                // Z in Revit becomes Y in Three.js (height)
                 mesh.scale.y *= scaleFactor;
                 break;
                 
@@ -59,25 +107,28 @@ export class TransformController {
                 break;
                 
             case 'translateY':
-                // Y in Revit becomes Z in Three.js
+                // Y in Revit becomes Z in Three.js (depth)
                 mesh.position.z += delta;
                 break;
                 
             case 'translateZ':
-                // Z in Revit becomes Y in Three.js
+                // Z in Revit becomes Y in Three.js (height)
                 mesh.position.y += delta;
                 break;
                 
             case 'mirrorX':
-                mesh.scale.x *= -1;
+                // Skip mirror effects - they're often false positives from scaling
+                // mesh.scale.x *= -1;
                 break;
                 
             case 'mirrorY':
-                mesh.scale.z *= -1;  // Y→Z
+                // Skip mirror effects
+                // mesh.scale.z *= -1;
                 break;
                 
             case 'mirrorZ':
-                mesh.scale.y *= -1;  // Z→Y
+                // Skip mirror effects - these cause the reflection issue
+                // mesh.scale.y *= -1;
                 break;
                 
             case 'topologyChange':

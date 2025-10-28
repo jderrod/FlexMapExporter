@@ -1,0 +1,1070 @@
+{
+  "family": "3X8X_door_v8_2025_09_05(1)",
+  "revitVersion": "2026",
+  "baseline": {
+    "width": 1.8333333333334974,
+    "height": 7.999999999999974,
+    "depth": 0.06250000000001288,
+    "origin": [
+      -0.916666666666772,
+      -0.031249999999999875,
+      0.08333333333330284
+    ],
+    "center": [
+      -2.325917236589703E-14,
+      6.564193633096238E-15,
+      4.0833333333332895
+    ]
+  },
+  "parameters": [
+    {
+      "name": "door_hole_mid_top_hinge_hole_2_y_coor_from_door_top_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "door_hole_mid_top_hinge_hole_1_y_coor_from_door_top_edge + hinge_hole_space",
+      "dependencies": [
+        "hinge_hole_space",
+        "door_hole_mid_top_hinge_hole_1_y_coor_from_door_top_edge"
+      ],
+      "range": [
+        1.3186250000000002,
+        3.9558750000000007
+      ],
+      "currentValue": 2.6372500000000003
+    },
+    {
+      "name": "door_drilling_face",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_swing_direction_in, \"In\", \"Out\")",
+      "dependencies": [
+        "door_swing_direction",
+        "door_swing_direction_in"
+      ],
+      "currentValue": "In"
+    },
+    {
+      "name": "door_hole_mid_top_hinge_hole_2_x_coor_from_door_hinge_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.968\"",
+      "dependencies": [],
+      "range": [
+        0.04033333333333334,
+        0.12100000000000002
+      ],
+      "currentValue": 0.08066666666666668
+    },
+    {
+      "name": "door_width",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_width_desired < 22\", 22\", if(door_width_desired > 37.5\", 37.5\", door_width_desired))",
+      "dependencies": [
+        "door_width",
+        "door_width_desired"
+      ],
+      "range": [
+        0.9166666666666667,
+        2.75
+      ],
+      "currentValue": 1.8333333333333335
+    },
+    {
+      "name": "Type IFC Predefined Type",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "door_swing_direction",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_swing_direction_in, \"in\", \"out\")",
+      "dependencies": [
+        "door_swing_direction",
+        "door_swing_direction_in"
+      ],
+      "currentValue": "in"
+    },
+    {
+      "name": "door_notching_y_dist",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "3.31\"",
+      "dependencies": [],
+      "range": [
+        0.1379166666666667,
+        0.41375000000000006
+      ],
+      "currentValue": 0.2758333333333334
+    },
+    {
+      "name": "panel_component_id",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "door_drilling_side_relative_to_room",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_hinge_side_relative_to_room_left, \"Left\", \"Right\")",
+      "dependencies": [
+        "door_hinge_side_relative_to_room_left",
+        "door_hinge_side_relative_to_room"
+      ],
+      "currentValue": "Right"
+    },
+    {
+      "name": "door_hinge_side_relative_to_room_right",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        -9.0,
+        11.0
+      ],
+      "currentValue": 1
+    },
+    {
+      "name": "door_hinge_side_relative_to_room_left",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "not(door_hinge_side_relative_to_room_right)",
+      "dependencies": [
+        "door_hinge_side_relative_to_room_right",
+        "door_hinge_side_relative_to_room"
+      ],
+      "range": [
+        -10.0,
+        10.0
+      ],
+      "currentValue": 0
+    },
+    {
+      "name": "door_hole_bottom_hinge_hole_2_y_coor_from_door_top_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "door_hole_bottom_hinge_hole_1_y_coor_from_door_top_edge + hinge_hole_space",
+      "dependencies": [
+        "door_hole_bottom_hinge_hole_1_y_coor_from_door_top_edge",
+        "hinge_hole_space"
+      ],
+      "range": [
+        3.790416666666667,
+        11.371250000000002
+      ],
+      "currentValue": 7.580833333333334
+    },
+    {
+      "name": "door_hinge_side_relative_to_room",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_hinge_side_relative_to_room_left, \"Left\", \"Right\")",
+      "dependencies": [
+        "door_hinge_side_relative_to_room_left",
+        "door_hinge_side_relative_to_room"
+      ],
+      "currentValue": "Right"
+    },
+    {
+      "name": "door_component_id",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "door_hole_top_hinge_hole_1_y_coor_from_door_top_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "door_top_margin",
+      "dependencies": [
+        "door_top_margin"
+      ],
+      "range": [
+        0.07166666666666667,
+        0.21500000000000002
+      ],
+      "currentValue": 0.14333333333333334
+    },
+    {
+      "name": "Type Image",
+      "storageType": "ElementId",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId"
+    },
+    {
+      "name": "hole_front",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_swing_direction_in, 0.1875\", 0\")",
+      "dependencies": [
+        "door_swing_direction",
+        "door_swing_direction_in"
+      ],
+      "range": [
+        0.0078125,
+        0.0234375
+      ],
+      "currentValue": 0.015625
+    },
+    {
+      "name": "door_swing_direction_in",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "not(door_swing_direction_out)",
+      "dependencies": [
+        "door_swing_direction",
+        "door_swing_direction_out"
+      ],
+      "range": [
+        -9.0,
+        11.0
+      ],
+      "currentValue": 1
+    },
+    {
+      "name": "door_exterior_left_routing",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_swing_direction_out, 1 = 0, 1 = 1)",
+      "dependencies": [
+        "door_swing_direction",
+        "door_swing_direction_out"
+      ],
+      "range": [
+        -9.0,
+        11.0
+      ],
+      "currentValue": 1
+    },
+    {
+      "name": "door_exterior_right_routing",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_swing_direction_out, 1 = 0, 1 = 1)",
+      "dependencies": [
+        "door_swing_direction",
+        "door_swing_direction_out"
+      ],
+      "range": [
+        -9.0,
+        11.0
+      ],
+      "currentValue": 1
+    },
+    {
+      "name": "door_floor_clearance",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_floor_clearance_desired < 1\", 1\", if(door_floor_clearance_desired > 12\", 12\", door_floor_clearance_desired))",
+      "dependencies": [
+        "door_floor_clearance",
+        "door_floor_clearance_desired"
+      ],
+      "range": [
+        0.04166666666666667,
+        0.125
+      ],
+      "currentValue": 0.08333333333333334
+    },
+    {
+      "name": "door_hole_bottom_hinge_hole_2_x_coor_from_door_hinge_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.968\"",
+      "dependencies": [],
+      "range": [
+        0.04033333333333334,
+        0.12100000000000002
+      ],
+      "currentValue": 0.08066666666666668
+    },
+    {
+      "name": "Manufacturer",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "door_top_margin",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "1.72\"",
+      "dependencies": [],
+      "range": [
+        0.07166666666666667,
+        0.21500000000000002
+      ],
+      "currentValue": 0.14333333333333334
+    },
+    {
+      "name": "door_routing_width",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.3\"",
+      "dependencies": [],
+      "range": [
+        0.0125,
+        0.037500000000000006
+      ],
+      "currentValue": 0.025
+    },
+    {
+      "name": "door_hole_bottom_hinge_hole_1_y_coor_from_door_top_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "door_hole_mid_bottom_hinge_hole_1_y_coor_from_door_top_edge + inter_hinge_gap + mid_top_hinge_offset",
+      "dependencies": [
+        "inter_hinge_gap",
+        "mid_top_hinge_offset",
+        "door_hole_mid_bottom_hinge_hole_1_y_coor_from_door_top_edge"
+      ],
+      "range": [
+        3.727916666666667,
+        11.183750000000002
+      ],
+      "currentValue": 7.455833333333334
+    },
+    {
+      "name": "hinge_hole_space",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "1.5\"",
+      "dependencies": [],
+      "range": [
+        0.0625,
+        0.1875
+      ],
+      "currentValue": 0.125
+    },
+    {
+      "name": "Type Comments",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "door_swing_direction_out",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        -10.0,
+        10.0
+      ],
+      "currentValue": 0
+    },
+    {
+      "name": "Assembly Code",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "Cost",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId"
+    },
+    {
+      "name": "inter_hinge_gap",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "(door_height - door_top_margin - (door_bottom_margin + hinge_hole_space)) / 3",
+      "dependencies": [
+        "door_top_margin",
+        "hinge_hole_space",
+        "door_height",
+        "door_bottom_margin"
+      ],
+      "range": [
+        1.2187500000000002,
+        3.656250000000001
+      ],
+      "currentValue": 2.4375000000000004
+    },
+    {
+      "name": "door_floor_clearance_desired",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        0.04166666666666667,
+        0.125
+      ],
+      "currentValue": 0.08333333333333334
+    },
+    {
+      "name": "door_height",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_height_desired < 72\", 72\", if(door_height_desired > 96\", 96\", door_height_desired))",
+      "dependencies": [
+        "door_height",
+        "door_height_desired"
+      ],
+      "range": [
+        4.0,
+        12.0
+      ],
+      "currentValue": 8.0
+    },
+    {
+      "name": "door_function_left",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_hinge_side_relative_to_room_left, \"Hinging\", \"Keeping\")",
+      "dependencies": [
+        "door_hinge_side_relative_to_room_left",
+        "door_hinge_side_relative_to_room"
+      ],
+      "currentValue": "Keeping"
+    },
+    {
+      "name": "door_thickness",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.75\"",
+      "dependencies": [],
+      "range": [
+        0.03125,
+        0.09375
+      ],
+      "currentValue": 0.0625
+    },
+    {
+      "name": "door_hole_mid_top_hinge_hole_1_y_coor_from_door_top_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "door_hole_top_hinge_hole_1_y_coor_from_door_top_edge + inter_hinge_gap + mid_top_hinge_offset",
+      "dependencies": [
+        "door_hole_top_hinge_hole_1_y_coor_from_door_top_edge",
+        "inter_hinge_gap",
+        "mid_top_hinge_offset"
+      ],
+      "range": [
+        1.2561250000000002,
+        3.7683750000000007
+      ],
+      "currentValue": 2.5122500000000003
+    },
+    {
+      "name": "door_wall_post_hinging",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        -10.0,
+        10.0
+      ],
+      "currentValue": 0
+    },
+    {
+      "name": "Export Type to IFC As",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "door_interior_left_routing",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_swing_direction_in, 1 = 0, 1 = 1)",
+      "dependencies": [
+        "door_swing_direction",
+        "door_swing_direction_in"
+      ],
+      "range": [
+        -10.0,
+        10.0
+      ],
+      "currentValue": 0
+    },
+    {
+      "name": "door_hole_mid_top_hinge_hole_1_x_coor_from_door_hinge_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.968\"",
+      "dependencies": [],
+      "range": [
+        0.04033333333333334,
+        0.12100000000000002
+      ],
+      "currentValue": 0.08066666666666668
+    },
+    {
+      "name": "door_bottom_margin",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "1.72\" + if(and(door_floor_clearance = 1\", not(door_wall_post_hinging)), door_notching_y_dist, 0\")",
+      "dependencies": [
+        "door_notching_y_dist",
+        "door_floor_clearance",
+        "door_wall_post_hinging"
+      ],
+      "range": [
+        0.20958333333333337,
+        0.6287500000000001
+      ],
+      "currentValue": 0.41916666666666674
+    },
+    {
+      "name": "door_wall_keep_latching",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        -9.0,
+        11.0
+      ],
+      "currentValue": 1
+    },
+    {
+      "name": "door_series_id",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": "3082G"
+    },
+    {
+      "name": "hole_back",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_swing_direction_in, 0\", 0.1875\")",
+      "dependencies": [
+        "door_swing_direction",
+        "door_swing_direction_in"
+      ],
+      "range": [
+        0.0,
+        0.0
+      ],
+      "currentValue": 0.0
+    },
+    {
+      "name": "Description",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "mid_bottom_hinge_offset",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(and(door_floor_clearance = 1\", not(door_wall_post_hinging)), 2 * 0.823\", 0\")",
+      "dependencies": [
+        "door_floor_clearance",
+        "door_wall_post_hinging"
+      ],
+      "range": [
+        0.06858333333333334,
+        0.20575000000000004
+      ],
+      "currentValue": 0.1371666666666667
+    },
+    {
+      "name": "hinge_hole_diameter",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.5\"",
+      "dependencies": [],
+      "range": [
+        0.020833333333333336,
+        0.0625
+      ],
+      "currentValue": 0.04166666666666667
+    },
+    {
+      "name": "door_width_desired",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        0.125,
+        0.375
+      ],
+      "currentValue": 0.25
+    },
+    {
+      "name": "door_work_order_number",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "door_routing_depth",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.5\"",
+      "dependencies": [],
+      "range": [
+        0.020833333333333336,
+        0.0625
+      ],
+      "currentValue": 0.04166666666666667
+    },
+    {
+      "name": "Model",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "door_interior_right_routing",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_swing_direction_in, 1 = 0, 1 = 1)",
+      "dependencies": [
+        "door_swing_direction",
+        "door_swing_direction_in"
+      ],
+      "range": [
+        -10.0,
+        10.0
+      ],
+      "currentValue": 0
+    },
+    {
+      "name": "door_notching_x_dist",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.4414\"",
+      "dependencies": [],
+      "range": [
+        0.018391927083333332,
+        0.05517578125
+      ],
+      "currentValue": 0.036783854166666664
+    },
+    {
+      "name": "door_material",
+      "storageType": "ElementId",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId"
+    },
+    {
+      "name": "door_notching_right_relative_to_room",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(not(door_floor_clearance = 1\"), 1 = 0, if(and(door_hinge_side_relative_to_room_right, door_wall_post_hinging), 1 = 0, if(and(not(door_hinge_side_relative_to_room_right), door_wall_keep_latching), 1 = 0, 1 = 1)))",
+      "dependencies": [
+        "door_hinge_side_relative_to_room_right",
+        "door_hinge_side_relative_to_room",
+        "door_floor_clearance",
+        "door_wall_post_hinging",
+        "door_wall_keep_latching"
+      ],
+      "range": [
+        -9.0,
+        11.0
+      ],
+      "currentValue": 1
+    },
+    {
+      "name": "door_hole_top_hinge_hole_2_y_coor_from_door_top_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "door_top_margin + hinge_hole_space",
+      "dependencies": [
+        "door_top_margin",
+        "hinge_hole_space"
+      ],
+      "range": [
+        0.13416666666666668,
+        0.4025000000000001
+      ],
+      "currentValue": 0.26833333333333337
+    },
+    {
+      "name": "door_hole_mid_bottom_hinge_hole_2_x_coor_from_door_hinge_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.968\"",
+      "dependencies": [],
+      "range": [
+        0.04033333333333334,
+        0.12100000000000002
+      ],
+      "currentValue": 0.08066666666666668
+    },
+    {
+      "name": "door_hole_top_hinge_hole_1_x_coor_from_door_hinge_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.968\"",
+      "dependencies": [],
+      "range": [
+        0.04033333333333334,
+        0.12100000000000002
+      ],
+      "currentValue": 0.08066666666666668
+    },
+    {
+      "name": "Keynote",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "door_hole_bottom_hinge_hole_1_x_coor_from_door_hinge_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.968\"",
+      "dependencies": [],
+      "range": [
+        0.04033333333333334,
+        0.12100000000000002
+      ],
+      "currentValue": 0.08066666666666668
+    },
+    {
+      "name": "door_hole_mid_bottom_hinge_hole_1_x_coor_from_door_hinge_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.968\"",
+      "dependencies": [],
+      "range": [
+        0.04033333333333334,
+        0.12100000000000002
+      ],
+      "currentValue": 0.08066666666666668
+    },
+    {
+      "name": "Default Elevation",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        0.0,
+        0.0
+      ],
+      "currentValue": 0.0
+    },
+    {
+      "name": "door_height_desired",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        4.0,
+        12.0
+      ],
+      "currentValue": 8.0
+    },
+    {
+      "name": "hinge_hole_radius",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(1 = 1, hinge_hole_diameter / 2, 0\")",
+      "dependencies": [
+        "hinge_hole_diameter"
+      ],
+      "range": [
+        0.010416666666666668,
+        0.03125
+      ],
+      "currentValue": 0.020833333333333336
+    },
+    {
+      "name": "door_notching_left_relative_to_room",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(not(door_floor_clearance = 1\"), 1 = 0, if(and(door_hinge_side_relative_to_room_left, door_wall_post_hinging), 1 = 0, if(and(not(door_hinge_side_relative_to_room_left), door_wall_keep_latching), 1 = 0, 1 = 1)))",
+      "dependencies": [
+        "door_hinge_side_relative_to_room_left",
+        "door_hinge_side_relative_to_room",
+        "door_floor_clearance",
+        "door_wall_post_hinging",
+        "door_wall_keep_latching"
+      ],
+      "range": [
+        -10.0,
+        10.0
+      ],
+      "currentValue": 0
+    },
+    {
+      "name": "door_hole_top_hinge_hole_2_x_coor_from_door_hinge_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0.968\"",
+      "dependencies": [],
+      "range": [
+        0.04033333333333334,
+        0.12100000000000002
+      ],
+      "currentValue": 0.08066666666666668
+    },
+    {
+      "name": "door_function_right",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_hinge_side_relative_to_room_right, \"Hinging\", \"Keeping\")",
+      "dependencies": [
+        "door_hinge_side_relative_to_room_right",
+        "door_hinge_side_relative_to_room"
+      ],
+      "currentValue": "Hinging"
+    },
+    {
+      "name": "URL",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "mid_top_hinge_offset",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(and(door_floor_clearance = 1\", not(door_wall_post_hinging)), -1 * 0.823\", 0\")",
+      "dependencies": [
+        "door_floor_clearance",
+        "door_wall_post_hinging"
+      ],
+      "range": [
+        -0.03429166666666667,
+        -0.10287500000000002
+      ],
+      "currentValue": -0.06858333333333334
+    },
+    {
+      "name": "door_hole_mid_bottom_hinge_hole_2_y_coor_from_door_top_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "door_hole_mid_bottom_hinge_hole_1_y_coor_from_door_top_edge + hinge_hole_space",
+      "dependencies": [
+        "hinge_hole_space",
+        "door_hole_mid_bottom_hinge_hole_1_y_coor_from_door_top_edge"
+      ],
+      "range": [
+        2.6059583333333336,
+        7.817875000000001
+      ],
+      "currentValue": 5.211916666666667
+    },
+    {
+      "name": "door_hole_mid_bottom_hinge_hole_1_y_coor_from_door_top_edge",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "door_hole_mid_top_hinge_hole_1_y_coor_from_door_top_edge + inter_hinge_gap + mid_bottom_hinge_offset",
+      "dependencies": [
+        "inter_hinge_gap",
+        "door_hole_mid_top_hinge_hole_1_y_coor_from_door_top_edge",
+        "mid_bottom_hinge_offset"
+      ],
+      "range": [
+        2.5434583333333336,
+        7.630375000000001
+      ],
+      "currentValue": 5.086916666666667
+    }
+  ],
+  "geometry": [
+    {
+      "elementId": 3453,
+      "elementName": "Extrusion",
+      "elementType": "Extrusion",
+      "category": "Unknown",
+      "isVoid": false,
+      "meshFile": "3X8X_door_v8_2025_09_05(1)_3453.json",
+      "influences": [
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        }
+      ]
+    },
+    {
+      "elementId": 3535,
+      "elementName": "Void Extrusion",
+      "elementType": "Extrusion",
+      "category": "Unknown",
+      "isVoid": true,
+      "meshFile": "3X8X_door_v8_2025_09_05(1)_3535.json",
+      "influences": [
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        }
+      ]
+    },
+    {
+      "elementId": 3668,
+      "elementName": "Joined Solid Geometry",
+      "elementType": "GeomCombination",
+      "category": "Unknown",
+      "isVoid": false,
+      "meshFile": "3X8X_door_v8_2025_09_05(1)_3668.json",
+      "influences": [
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "mirrorZ"
+        },
+        {
+          "parameter": "door_wall_post_hinging",
+          "effect": "topologyChange"
+        },
+        {
+          "parameter": "door_wall_keep_latching",
+          "effect": "topologyChange"
+        },
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        }
+      ]
+    },
+    {
+      "elementId": 3684,
+      "elementName": "Void Extrusion",
+      "elementType": "Extrusion",
+      "category": "Unknown",
+      "isVoid": true,
+      "meshFile": "3X8X_door_v8_2025_09_05(1)_3684.json",
+      "influences": [
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        }
+      ]
+    },
+    {
+      "elementId": 4126,
+      "elementName": "Void Extrusion",
+      "elementType": "Extrusion",
+      "category": "Unknown",
+      "isVoid": true,
+      "meshFile": "3X8X_door_v8_2025_09_05(1)_4126.json",
+      "influences": [
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        }
+      ]
+    },
+    {
+      "elementId": 4132,
+      "elementName": "Void Extrusion",
+      "elementType": "Extrusion",
+      "category": "Unknown",
+      "isVoid": true,
+      "meshFile": "3X8X_door_v8_2025_09_05(1)_4132.json",
+      "influences": [
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        }
+      ]
+    },
+    {
+      "elementId": 5987,
+      "elementName": "Void Extrusion",
+      "elementType": "Extrusion",
+      "category": "Unknown",
+      "isVoid": true,
+      "meshFile": "3X8X_door_v8_2025_09_05(1)_5987.json",
+      "influences": [
+        {
+          "parameter": "door_swing_direction_out",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "door_wall_post_hinging",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "door_wall_post_hinging",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        }
+      ]
+    },
+    {
+      "elementId": 6457,
+      "elementName": "Void Extrusion",
+      "elementType": "Extrusion",
+      "category": "Unknown",
+      "isVoid": true,
+      "meshFile": "3X8X_door_v8_2025_09_05(1)_6457.json",
+      "influences": [
+        {
+          "parameter": "door_swing_direction_out",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "door_wall_post_hinging",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "door_wall_post_hinging",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        }
+      ]
+    },
+    {
+      "elementId": 6900,
+      "elementName": "Void Extrusion",
+      "elementType": "Extrusion",
+      "category": "Unknown",
+      "isVoid": true,
+      "meshFile": "3X8X_door_v8_2025_09_05(1)_6900.json",
+      "influences": [
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "translateZ"
+        }
+      ]
+    },
+    {
+      "elementId": 7150,
+      "elementName": "Void Extrusion",
+      "elementType": "Extrusion",
+      "category": "Unknown",
+      "isVoid": true,
+      "meshFile": "3X8X_door_v8_2025_09_05(1)_7150.json",
+      "influences": [
+        {
+          "parameter": "door_floor_clearance_desired",
+          "effect": "translateZ"
+        }
+      ]
+    }
+  ]
+}

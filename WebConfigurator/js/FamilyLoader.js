@@ -89,7 +89,7 @@ export class FamilyLoader {
             isVoid: geomConfig.isVoid,
             influences: geomConfig.influences,
             originalPosition: mesh.position.clone(),
-            originalScale: mesh.scale.clone(),
+            originalScale: new THREE.Vector3(1, 1, 1), // Baseline scale is 1,1,1
             originalRotation: mesh.rotation.clone()
         };
         
@@ -98,14 +98,15 @@ export class FamilyLoader {
     
     createMaterial(geomConfig) {
         if (geomConfig.isVoid) {
-            // Voids are holes/cuts - render them differently
+            // Voids rendered as bright red cylinders to show hole positions
             return new THREE.MeshStandardMaterial({
-                color: 0x333333,
-                metalness: 0.1,
-                roughness: 0.8,
+                color: 0xFF0000, // Bright red for visibility
+                metalness: 0.3,
+                roughness: 0.6,
                 side: THREE.DoubleSide,
-                transparent: true,
-                opacity: 0.3
+                transparent: false,
+                emissive: 0xFF0000,
+                emissiveIntensity: 0.2
             });
         } else {
             // Solid elements

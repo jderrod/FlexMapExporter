@@ -16,9 +16,9 @@ class DoorConfigurator {
         this.transformController = null;
         this.uiManager = null;
         
-        // Configuration
-        this.configPath = '../Desktop/FlexMapTest4/3X8X_door_v8_2025_09_05(1)_config.json';
-        this.geometryBasePath = '../Desktop/FlexMapTest4/geometry/';
+        // Configuration - FlexMapTest4 is now in the WebConfigurator folder
+        this.configPath = 'FlexMapTest4/3X8X_door_v8_2025_09_05(1)_config.json';
+        this.geometryBasePath = 'FlexMapTest4/geometry/';
         
         this.init();
     }
@@ -44,7 +44,8 @@ class DoorConfigurator {
             this.transformController = new TransformController(
                 this.sceneManager.meshes, 
                 config,
-                this.parameterManager
+                this.parameterManager,
+                this.sceneManager.scene  // Pass scene for CSG
             );
             
             // Build UI
@@ -54,6 +55,9 @@ class DoorConfigurator {
                 (paramName, value) => this.onParameterChange(paramName, value)
             );
             this.uiManager.buildUI();
+            
+            // Apply initial transforms
+            this.transformController.applyAllTransforms();
             
             // Update stats
             this.updateStats(config, meshes);
