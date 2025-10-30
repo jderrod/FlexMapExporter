@@ -1,0 +1,815 @@
+{
+  "family": "Privada-Alcove_Recessed-v1_2025_10_29",
+  "revitVersion": "2026",
+  "baseline": {
+    "width": 9.708333333333337,
+    "height": 9.000000000000133,
+    "depth": 6.708333333333335,
+    "origin": [
+      -0.5,
+      -6.208333333333334,
+      -1.290079154614432E-13
+    ],
+    "center": [
+      4.354166666666669,
+      -2.8541666666666665,
+      4.499999999999937
+    ]
+  },
+  "parameters": [
+    {
+      "name": "S6_clear_offset",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(S6_clear_offset_desired < S6_min_offset_HS, S6_min_offset_HS, if(S6_clear_offset_desired > 80\", 80\", S6_clear_offset_desired))",
+      "dependencies": [
+        "S6_clear_offset",
+        "S6_clear_offset_desired",
+        "S6_min_offset_HS",
+        "S6_min_offset"
+      ],
+      "range": [
+        0.16666666666666669,
+        0.5
+      ],
+      "currentValue": 0.33333333333333337
+    },
+    {
+      "name": "alcove_stall_o.c_depth",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(alcove_stall_o.c_depth_desired < 30\", 30\", if(alcove_stall_o.c_depth_desired > 200\", 200\", alcove_stall_o.c_depth_desired))",
+      "dependencies": [
+        "alcove_stall_o.c_depth",
+        "alcove_stall_o.c_depth_desired"
+      ],
+      "range": [
+        2.6041666666666674,
+        7.812500000000002
+      ],
+      "currentValue": 5.208333333333335
+    },
+    {
+      "name": "S6_clear_offset_desired",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "alcove_stall_clear_width - S5_clear_offset - D4_width",
+      "dependencies": [
+        "alcove_stall_clear_width",
+        "D4_width",
+        "S5_clear_offset"
+      ],
+      "range": [
+        0.16666666666666669,
+        0.5
+      ],
+      "currentValue": 0.33333333333333337
+    },
+    {
+      "name": "Description",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "door_height_desired",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        4.0,
+        12.0
+      ],
+      "currentValue": 8.0
+    },
+    {
+      "name": "Keynote",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "Model",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "D4_hinge_on_left_relative_to_room",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        -10.0,
+        10.0
+      ],
+      "currentValue": 0
+    },
+    {
+      "name": "Cost",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId"
+    },
+    {
+      "name": "S6_extra_pedestal",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "not(S6_clear_offset < 21\")",
+      "dependencies": [
+        "S6_clear_offset"
+      ],
+      "range": [
+        -10.0,
+        10.0
+      ],
+      "currentValue": 0
+    },
+    {
+      "name": "D4_hinge_relative_to_room",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(D4_hinge_on_left_relative_to_room, \"Left\", \"Right\")",
+      "dependencies": [
+        "D4_hinge_on_left_relative_to_room"
+      ],
+      "currentValue": "Right"
+    },
+    {
+      "name": "D4_inswing",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        -9.0,
+        11.0
+      ],
+      "currentValue": 1
+    },
+    {
+      "name": "D4_width_desired",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        1.5000000000000002,
+        4.500000000000001
+      ],
+      "currentValue": 3.0000000000000004
+    },
+    {
+      "name": "URL",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "Type Image",
+      "storageType": "ElementId",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId"
+    },
+    {
+      "name": "alcove_stall_o.c_depth_desired",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        2.6041666666666674,
+        7.812500000000002
+      ],
+      "currentValue": 5.208333333333335
+    },
+    {
+      "name": "wall_height",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        4.500000000000001,
+        13.500000000000004
+      ],
+      "currentValue": 9.000000000000002
+    },
+    {
+      "name": "alcove_stall_clear_width_desired",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        4.354166666666667,
+        13.0625
+      ],
+      "currentValue": 8.708333333333334
+    },
+    {
+      "name": "S5_min_offset_HS",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "2 3/4\"",
+      "dependencies": [],
+      "range": [
+        0.11458333333333334,
+        0.34375
+      ],
+      "currentValue": 0.22916666666666669
+    },
+    {
+      "name": "Assembly Code",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "Default Elevation",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "0\"",
+      "dependencies": [],
+      "range": [
+        0.0,
+        0.0
+      ],
+      "currentValue": 0.0
+    },
+    {
+      "name": "D4_swing_direction",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(D4_inswing, \"In\", \"Out\")",
+      "dependencies": [
+        "D4_inswing"
+      ],
+      "currentValue": "In"
+    },
+    {
+      "name": "visibility_walls_3D",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        -9.0,
+        11.0
+      ],
+      "currentValue": 1
+    },
+    {
+      "name": "door_height",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(door_height_desired > 96\", 96\", if(door_height_desired < 72\", 72\", door_height_desired))",
+      "dependencies": [
+        "door_height_desired",
+        "door_height"
+      ],
+      "range": [
+        4.0,
+        12.0
+      ],
+      "currentValue": 8.0
+    },
+    {
+      "name": "Type IFC Predefined Type",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "overall_system_height",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "door_height + alcove_floor_clearance + 1 1/8\"",
+      "dependencies": [
+        "door_height",
+        "alcove_floor_clearance"
+      ],
+      "range": [
+        4.421875000000001,
+        13.265625000000004
+      ],
+      "currentValue": 8.843750000000002
+    },
+    {
+      "name": "S5_extra_pedestal",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "not(S5_clear_offset < 21\")",
+      "dependencies": [
+        "S5_clear_offset"
+      ],
+      "range": [
+        -9.0,
+        11.0
+      ],
+      "currentValue": 1
+    },
+    {
+      "name": "alcove_stall_clear_width",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(alcove_stall_clear_width_desired < 61\", 61\", if(alcove_stall_clear_width_desired > 200\", 200\", alcove_stall_clear_width_desired))",
+      "dependencies": [
+        "alcove_stall_clear_width_desired",
+        "alcove_stall_clear_width"
+      ],
+      "range": [
+        4.354166666666667,
+        13.0625
+      ],
+      "currentValue": 8.708333333333334
+    },
+    {
+      "name": "alcove_floor_clearance",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(or(door_height = 72\", alcove_floor_clearance_9\"_desired), 9\", 4\")",
+      "dependencies": [
+        "door_height",
+        "alcove_floor_clearance",
+        "alcove_floor_clearance_9\"_desired"
+      ],
+      "range": [
+        0.37500000000000006,
+        1.1250000000000002
+      ],
+      "currentValue": 0.7500000000000001
+    },
+    {
+      "name": "D4_centering",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        -10.0,
+        10.0
+      ],
+      "currentValue": 0
+    },
+    {
+      "name": "S5_min_offset",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(D4_hinge_on_left_relative_to_room, 3 1/2\", if(not(D4_hinge_on_left_relative_to_room), 3 5/8\", 0\"))",
+      "dependencies": [
+        "D4_hinge_on_left_relative_to_room"
+      ],
+      "range": [
+        0.15104166666666669,
+        0.45312500000000006
+      ],
+      "currentValue": 0.30208333333333337
+    },
+    {
+      "name": "S6_min_offset_HS",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "2 3/4\"",
+      "dependencies": [],
+      "range": [
+        0.11458333333333334,
+        0.34375
+      ],
+      "currentValue": 0.22916666666666669
+    },
+    {
+      "name": "Export Type to IFC As",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "S6_min_offset",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(D4_hinge_on_left_relative_to_room, 3 5/8\", if(not(D4_hinge_on_left_relative_to_room), 3 1/2\", 0\"))",
+      "dependencies": [
+        "D4_hinge_on_left_relative_to_room"
+      ],
+      "range": [
+        0.14583333333333334,
+        0.4375
+      ],
+      "currentValue": 0.2916666666666667
+    },
+    {
+      "name": "Type Comments",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "alcove_floor_clearance_9\"_desired",
+      "storageType": "Integer",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        -9.0,
+        11.0
+      ],
+      "currentValue": 1
+    },
+    {
+      "name": "Manufacturer",
+      "storageType": "String",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "currentValue": ""
+    },
+    {
+      "name": "S5_clear_offset_desired",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "range": [
+        2.6875000000000004,
+        8.062500000000002
+      ],
+      "currentValue": 5.375000000000001
+    },
+    {
+      "name": "D4_width",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(D4_width_desired < 22\", 22\", if(D4_width_desired > 37\", 37\", D4_width_desired))",
+      "dependencies": [
+        "D4_width_desired",
+        "D4_width"
+      ],
+      "range": [
+        1.5000000000000002,
+        4.500000000000001
+      ],
+      "currentValue": 3.0000000000000004
+    },
+    {
+      "name": "S5_clear_offset",
+      "storageType": "Double",
+      "unit": "Autodesk.Revit.DB.ForgeTypeId",
+      "formula": "if(D4_centering, (alcove_stall_clear_width - D4_width) / 2, if(S5_clear_offset_desired < S5_min_offset_HS, S5_min_offset_HS, if(not(alcove_stall_clear_width - D4_width < S5_clear_offset_desired + S6_min_offset_HS), S5_clear_offset_desired, alcove_stall_clear_width - D4_width - S6_min_offset_HS)))",
+      "dependencies": [
+        "S5_min_offset_HS",
+        "alcove_stall_clear_width",
+        "D4_centering",
+        "S5_min_offset",
+        "S6_min_offset_HS",
+        "S6_min_offset",
+        "S5_clear_offset_desired",
+        "D4_width",
+        "S5_clear_offset"
+      ],
+      "range": [
+        2.6875000000000004,
+        8.062500000000002
+      ],
+      "currentValue": 5.375000000000001
+    }
+  ],
+  "geometry": [
+    {
+      "elementId": 3280,
+      "elementName": "Detail Filled Region",
+      "elementType": "FilledRegion",
+      "category": "Detail Items",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_3280.json",
+      "influences": [
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "scaleY"
+        },
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "alcove_stall_clear_width_desired",
+          "effect": "scaleX"
+        }
+      ]
+    },
+    {
+      "elementId": 8344,
+      "elementName": "Privada-Fascia",
+      "elementType": "FamilyInstance",
+      "category": "Specialty Equipment",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_8344.json",
+      "influences": [
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "D4_hinge_on_left_relative_to_room",
+          "effect": "scaleX"
+        },
+        {
+          "parameter": "D4_hinge_on_left_relative_to_room",
+          "effect": "topologyChange"
+        },
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "D4_centering",
+          "effect": "scaleX"
+        },
+        {
+          "parameter": "alcove_floor_clearance_9\"_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "S5_clear_offset_desired",
+          "effect": "scaleX"
+        }
+      ]
+    },
+    {
+      "elementId": 8543,
+      "elementName": "Privada-Fascia",
+      "elementType": "FamilyInstance",
+      "category": "Specialty Equipment",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_8543.json",
+      "influences": [
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "D4_hinge_on_left_relative_to_room",
+          "effect": "scaleX"
+        },
+        {
+          "parameter": "D4_hinge_on_left_relative_to_room",
+          "effect": "translateX"
+        },
+        {
+          "parameter": "D4_hinge_on_left_relative_to_room",
+          "effect": "topologyChange"
+        },
+        {
+          "parameter": "D4_width_desired",
+          "effect": "scaleX"
+        },
+        {
+          "parameter": "D4_width_desired",
+          "effect": "translateX"
+        },
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "alcove_stall_clear_width_desired",
+          "effect": "scaleX"
+        },
+        {
+          "parameter": "D4_centering",
+          "effect": "scaleX"
+        },
+        {
+          "parameter": "D4_centering",
+          "effect": "translateX"
+        },
+        {
+          "parameter": "alcove_floor_clearance_9\"_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "S5_clear_offset_desired",
+          "effect": "scaleX"
+        },
+        {
+          "parameter": "S5_clear_offset_desired",
+          "effect": "translateX"
+        }
+      ]
+    },
+    {
+      "elementId": 8942,
+      "elementName": "Pedestal Kit",
+      "elementType": "FamilyInstance",
+      "category": "Specialty Equipment",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_8942.json",
+      "influences": [
+        {
+          "parameter": "D4_hinge_on_left_relative_to_room",
+          "effect": "translateX"
+        },
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "D4_centering",
+          "effect": "translateX"
+        },
+        {
+          "parameter": "alcove_floor_clearance_9\"_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "S5_clear_offset_desired",
+          "effect": "translateX"
+        }
+      ]
+    },
+    {
+      "elementId": 18205,
+      "elementName": "Door",
+      "elementType": "FamilyInstance",
+      "category": "Specialty Equipment",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_18205.json",
+      "influences": [
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "D4_hinge_on_left_relative_to_room",
+          "effect": "translateX"
+        },
+        {
+          "parameter": "D4_inswing",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "D4_width_desired",
+          "effect": "scaleX"
+        },
+        {
+          "parameter": "D4_width_desired",
+          "effect": "scaleY"
+        },
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "D4_centering",
+          "effect": "translateX"
+        },
+        {
+          "parameter": "alcove_floor_clearance_9\"_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "S5_clear_offset_desired",
+          "effect": "translateX"
+        }
+      ]
+    },
+    {
+      "elementId": 29941,
+      "elementName": "Extrusion",
+      "elementType": "Extrusion",
+      "category": "Unknown",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_29941.json",
+      "influences": [
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "scaleY"
+        },
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "wall_height",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "alcove_stall_clear_width_desired",
+          "effect": "scaleX"
+        }
+      ]
+    },
+    {
+      "elementId": 30310,
+      "elementName": "Pedestal Kit",
+      "elementType": "FamilyInstance",
+      "category": "Specialty Equipment",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_30310.json",
+      "influences": [
+        {
+          "parameter": "D4_hinge_on_left_relative_to_room",
+          "effect": "visibilityToggle"
+        },
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "alcove_stall_clear_width_desired",
+          "effect": "translateX"
+        },
+        {
+          "parameter": "D4_centering",
+          "effect": "translateX"
+        },
+        {
+          "parameter": "alcove_floor_clearance_9\"_desired",
+          "effect": "scaleZ"
+        }
+      ]
+    },
+    {
+      "elementId": 31154,
+      "elementName": "2\" Wide",
+      "elementType": "FamilyInstance",
+      "category": "Specialty Equipment",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_31154.json",
+      "influences": [
+        {
+          "parameter": "door_height_desired",
+          "effect": "translateZ"
+        },
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "alcove_stall_clear_width_desired",
+          "effect": "scaleX"
+        },
+        {
+          "parameter": "alcove_floor_clearance_9\"_desired",
+          "effect": "translateZ"
+        }
+      ]
+    },
+    {
+      "elementId": 35803,
+      "elementName": "Angle Bracket",
+      "elementType": "FamilyInstance",
+      "category": "Specialty Equipment",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_35803.json",
+      "influences": [
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "alcove_floor_clearance_9\"_desired",
+          "effect": "translateZ"
+        }
+      ]
+    },
+    {
+      "elementId": 36040,
+      "elementName": "Angle Bracket",
+      "elementType": "FamilyInstance",
+      "category": "Specialty Equipment",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_36040.json",
+      "influences": [
+        {
+          "parameter": "door_height_desired",
+          "effect": "scaleZ"
+        },
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "alcove_stall_clear_width_desired",
+          "effect": "translateX"
+        },
+        {
+          "parameter": "alcove_floor_clearance_9\"_desired",
+          "effect": "translateZ"
+        }
+      ]
+    },
+    {
+      "elementId": 36471,
+      "elementName": "Pedestal Kit",
+      "elementType": "FamilyInstance",
+      "category": "Specialty Equipment",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_36471.json",
+      "influences": [
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        }
+      ]
+    },
+    {
+      "elementId": 36829,
+      "elementName": "Pedestal Kit",
+      "elementType": "FamilyInstance",
+      "category": "Specialty Equipment",
+      "isVoid": false,
+      "meshFile": "Privada-Alcove_Recessed-v1_2025_10_29_36829.json",
+      "influences": [
+        {
+          "parameter": "alcove_stall_o.c_depth_desired",
+          "effect": "translateY"
+        },
+        {
+          "parameter": "alcove_stall_clear_width_desired",
+          "effect": "translateX"
+        }
+      ]
+    }
+  ]
+}
