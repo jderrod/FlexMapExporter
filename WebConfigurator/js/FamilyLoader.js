@@ -98,14 +98,36 @@ export class FamilyLoader {
     
     createMaterial(geomConfig) {
         if (geomConfig.isVoid) {
-            // Voids rendered as bright red cylinders to show hole positions
+            // Color-code voids by type for easy identification
+            let color, emissive;
+            
+            // Routing voids (edge grooves) - RED
+            if (geomConfig.elementId === 5987 || geomConfig.elementId === 6457) {
+                color = 0xFF0000;    // Bright red
+                emissive = 0xFF0000;
+            }
+            // Notch voids (bottom corner cutouts) - GREEN and BLUE
+            else if (geomConfig.elementId === 6900) {
+                color = 0x00FF00;    // Bright green (LEFT notch)
+                emissive = 0x00FF00;
+            }
+            else if (geomConfig.elementId === 7150) {
+                color = 0x0088FF;    // Bright blue (RIGHT notch)
+                emissive = 0x0088FF;
+            }
+            // Hinge holes - YELLOW/ORANGE
+            else {
+                color = 0xFFAA00;    // Orange/yellow (hinge holes)
+                emissive = 0xFFAA00;
+            }
+            
             return new THREE.MeshStandardMaterial({
-                color: 0xFF0000, // Bright red for visibility
+                color: color,
                 metalness: 0.3,
                 roughness: 0.6,
                 side: THREE.DoubleSide,
                 transparent: false,
-                emissive: 0xFF0000,
+                emissive: emissive,
                 emissiveIntensity: 0.2
             });
         } else {
